@@ -1,8 +1,8 @@
 import React from 'react';
-import store from '../store/index';
+import store from '../store';
 import { Header } from '../components/Header';
-import { Chats } from '../components/Chats';
-import { MessageInput } from '../containers/MessageInput';
+import { Chats } from './Chats';
+import { MessageInput } from './MessageInput';
 import _ from 'lodash';
 import '../styles/ChatWindow.css';
 
