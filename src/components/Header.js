@@ -1,13 +1,14 @@
 import React from 'react';
+
 import '../styles/Header.css';
 
-export function Header({ user }) {
-    const {name, status } = user;
-
+const header = (props) => {
     return (
         <header className='Header'>
-            <h1 className='Header__name'>{name}</h1>
-            <p className='Header__status'>{status}</p>
+            <h1 className='Header__name'>{props.user.name}</h1>
+            <p className='Header__status'>{props.user.status}</p>
         </header>
     );
-}
+};
+
+export default header;

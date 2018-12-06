@@ -1,17 +1,21 @@
 import React from 'react';
-import '../styles/Main.css';
-import { Empty } from './Empty'
+
+import Empty from './Empty'
 import { ChatWindow } from '../containers/ChatWindow.js';
 
-export const Main = ({ user, activeUserId }) => {
+import '../styles/Main.css';
+
+const main = (props) => {
     const renderMainContent = () => {
-        if (!activeUserId) {
-            return <Empty user={user} activeUserId={activeUserId} />
+        if (!props.activeUserId) {
+            return <Empty user={props.user} activeUserId={props.activeUserId} />
         } else {
-            return <ChatWindow activeUserId={activeUserId} />
+            return <ChatWindow activeUserId={props.activeUserId} />
         }
     };
 
     return <main className='Main'>{renderMainContent()}</main>
 };
+
+export default main;
 

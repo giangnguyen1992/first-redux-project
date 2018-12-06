@@ -1,15 +1,17 @@
 import React from 'react';
-import store from '../store';
-import { Header } from '../components/Header';
-import { Chats } from './Chats';
-import { MessageInput } from './MessageInput';
 import _ from 'lodash';
+
+import store from '../store';
+import Header  from '../components/Header';
+import Chats from './Chats';
+import MessageInput from './MessageInput';
+
 import '../styles/ChatWindow.css';
 
-export const ChatWindow = ({ activeUserId }) => {
+export const ChatWindow = (props) => {
     const state = store.getState();
-    const activeUser = state.contacts[activeUserId];
-    const activeMsgs = state.messages[activeUserId];
+    const activeUser = state.contacts[props.activeUserId];
+    const activeMsgs = state.messages[props.activeUserId];
     const { typing } = state; 
 
     return (

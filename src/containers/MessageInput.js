@@ -1,15 +1,16 @@
 import React from 'react';
+
 import store from '../store';
 import { setTypingValue, sendMessage } from '../action';
+
 import '../styles/MessageInput.css';
 
-export const MessageInput = ({ value }) => {
+const messageInput = (props) => {
     const state = store.getState();
 
     const handleSubmit = e => {
         e.preventDefault();
-        const { typing, activeUserId } = state;
-        store.dispatch(sendMessage(typing, activeUserId));
+        store.dispatch(sendMessage(state.typing, state.activeUserId));
     };
 
     const handleChange = e => {
@@ -21,9 +22,11 @@ export const MessageInput = ({ value }) => {
             <input 
                 className='Message__input'
                 onChange={handleChange}
-                value={value}
+                value={props.value}
                 placeholder='write a message'
             />    
         </form>
     );
 };
+
+export default messageInput;
