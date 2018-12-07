@@ -1,5 +1,5 @@
 {
-  "name": "skypey",
+  "name": "react-redux-chat",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
