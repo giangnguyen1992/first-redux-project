@@ -1,6 +1,6 @@
 # react-redux-chat
 
-## Feautures
+## Features
 
 - built with react.js and redux as state container
 - dummy data created from txtgen, faker and shortid
